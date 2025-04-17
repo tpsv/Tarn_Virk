@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Tarn Virk</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="Projects.html">Projects</a></li>
+											<li><a href="Work_Experience.html">Work Experience</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="Cybersecurity lab project showcasing advanced techniques in red teaming, EDR integration, and detection engineering.">
+                <title>End-to-End Cybersecurity Lab: Building and Defending a Secure Virtual Environment</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        line-height: 1.6;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #f4f4f4;
+                        color: #333;
+                    }
+                    header {
+                        background-color: #343a40;
+                        color: #fff;
+                        padding: 20px;
+                        text-align: center;
+                    }
+                    .container {
+                        width: 80%;
+                        margin: auto;
+                        overflow: hidden;
+                    }
+                    h1, h2 {
+                        color: #343a40;
+                    }
+                    h3 {
+                        color: #007bff;
+                    }
+                    p {
+                        margin: 15px 0;
+                    }
+                    .overview, .skills, .outcome {
+                        margin: 30px 0;
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    }
+                    pre {
+                        background-color: #f8f9fa;
+                        padding: 15px;
+                        border-radius: 8px;
+                        border: 1px solid #ddd;
+                        font-family: Consolas, monospace;
+                        color: #c7254e;
+                        overflow-x: auto;
+                    }
+                    footer {
+                        background-color: #343a40;
+                        color: #fff;
+                        text-align: center;
+                        padding: 10px;
+                        position: fixed;
+                        bottom: 0;
+                        width: 100%;
+                    }
+                </style>
+            </head>
+            <body>
+            
+            <header>
+                <h1>End-to-End Cybersecurity Lab: Building and Defending a Secure Virtual Environment</h1>
+            </header>
+            
+            <div class="container">
+                <div class="overview">
+                    <h2>Overview</h2>
+                    <p>In an era where threat actors continually evolve their techniques, I designed and implemented a full-scale cybersecurity lab tailored for red teaming, threat detection, and endpoint defense validation. This environment mimics real-world attack scenarios and showcases my ability to both emulate adversaries and proactively defend systems.</p>
+                </div>
+            
+                <div class="skills">
+                    <h2>Virtual Environment Architecture</h2>
+                    <p>Using <strong>VMware Workstation Pro</strong>, I architected a secure and segmented virtual lab. The environment includes:</p>
+                    <ul>
+                        <li>A <strong>Windows 10 VM</strong> functioning as the victim workstation.</li>
+                        <li>A <strong>Kali Linux VM</strong> operating as the attacker console.</li>
+                        <li>Tight network isolation to simulate internal compromise scenarios.</li>
+                    </ul>
+                    <p>This modular setup enables controlled attack execution and real-time telemetry capture—critical for both offensive and defensive testing.</p>
+                </div>
+            
+                <div class="skills">
+                    <h2>Adversary Simulation with Sliver C2</h2>
+                    <p>To emulate real-world threats, I deployed <strong>Sliver</strong>, an open-source Command & Control (C2) framework developed by Bishop Fox.</p>
+                    <ul>
+                        <li><strong>Server Setup</strong>: Installed and configured Sliver server on the Linux VM, enabling implant generation and interactive session control.</li>
+                        <li><strong>Payload Creation</strong>: Generated Windows payloads to simulate attacker presence on the victim machine.</li>
+                        <li><strong>Session Management</strong>: Established encrypted C2 channels to exfiltrate data and execute post-exploitation tasks such as LSASS memory dumping.</li>
+                    </ul>
+                    <p><strong>Key Skill Demonstrated</strong>: Understanding of post-exploitation techniques, process injection, and privilege escalation.</p>
+                </div>
+            
+                <div class="skills">
+                    <h2>Endpoint Detection & Telemetry Collection</h2>
+                    <p>To monitor and analyze malicious behavior, I integrated <strong>LimaCharlie EDR</strong> and <strong>Sysmon</strong> on the Windows VM.</p>
+                    <ul>
+                        <li><strong>LimaCharlie Agent Deployment</strong>: Registered the VM as a sensor and ingested rich telemetry including process creation, file access, and network connections.</li>
+                        <li><strong>Sysmon Configuration</strong>: Used SwiftOnSecurity’s configuration to log granular endpoint activity, such as command-line arguments and parent-child process relationships.</li>
+                    </ul>
+                    <p>This telemetry fed into LimaCharlie’s timeline and detection engine, providing a foundation for custom detection engineering.</p>
+                </div>
+            
+                <div class="skills">
+                    <h2>Simulated Attacks: Credential Dumping and Shadow Copy Deletion</h2>
+                    <h3>Credential Dumping via LSASS:</h3>
+                    <pre>procdump -n lsass.exe -s lsass.dmp</pre>
+                    <p>This mimics attacker attempts to extract user credentials from memory—one of the most critical post-exploitation techniques. LimaCharlie successfully detected this through its <strong>SENSITIVE_PROCESS_ACCESS</strong> event logs.</p>
+            
+                    <h3>Volume Shadow Copy Deletion:</h3>
+                    <pre>vssadmin delete shadows /all</pre>
+                    <p>Using this command, I simulated ransomware tactics aimed at sabotaging recovery mechanisms. A high-fidelity detection rule was crafted to monitor access to <strong>vssadmin.exe</strong>, alert, and block malicious commands in real-time. LimaCharlie’s <strong>deny_tree</strong> feature neutralized the threat.</p>
+                </div>
+            
+                <div class="skills">
+                    <h2>Detection Engineering & Response Automation</h2>
+                    <p>One of the most impactful components of the lab was crafting and tuning <strong>Detection & Response (D&R)</strong> rules within LimaCharlie. These rules dynamically react to suspicious behavior in real-time.</p>
+                    <h3>Detection Example:</h3>
+                    <pre>
+            event: SENSITIVE_PROCESS_ACCESS
+            op: ends with
+            path: event/*/TARGET/FILE_PATH
+            value: lsass.exe
+                    </pre>
+            
+                    <h3>Response:</h3>
+                    <pre>
+            action: report
+            name: LSASS access
+                    </pre>
+                    <p>Later enhanced with <strong>blocking logic</strong> to neutralize ransomware payloads preemptively.</p>
+                </div>
+            
+                <div class="skills">
+                    <h2>Fine-Tuning for Accuracy: Reducing False Positives</h2>
+                    <p>Not every detection is a threat. I demonstrated my defensive acumen by identifying and reducing <strong>false positives</strong> through:</p>
+                    <ul>
+                        <li>Crafting suppression rules.</li>
+                        <li>Contextual filtering (e.g., isolating <strong>svchost.exe</strong> executions outside <strong>System32</strong>).</li>
+                        <li>Improving detection granularity without compromising sensitivity.</li>
+                    </ul>
+                    <p>This reflects my understanding of balancing security and usability—crucial in any enterprise SOC.</p>
+                </div>
+            
+                <div class="outcome">
+                    <h2>Outcome</h2>
+                    <p>The environment I built is modular, replicable, and fully suited for continuous testing and blue team practice. It stands as a testament to my capability in offensive and defensive security, and my readiness to operate in high-stakes cybersecurity environments.</p>
+                </div>
+            </div>
+            
+
+<!-- Footer -->
+<footer id="footer">
+
+	<ul class="icons">
+		<!-- <li>
+		  <a href="tel:+1234567890" class="icon solid fa-phone">
+			<span class="label">Phone</span>
+		  </a>
+		  &nbsp;+61 470378240
+		</li> -->
+		<li>
+		  <a href="mailto:tarnvirkit@gmail.com" class="icon solid fa-envelope">
+			<span class="label">Email</span>
+		  </a>
+		  &nbsp;Tarnvirkit@gmail.com
+		</li>
+	  </ul>
+	  
+</footer>
+
+
+				<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script> 
+
+
+	</body>
+</html>
