@@ -3997,3 +3997,29 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+/* LinkedIn blue */
+.button.primary.linkedin {
+	background-color: #0A66C2;
+	box-shadow: none;
+	color: #ffffff !important;
+}
+.button.primary.linkedin:hover {
+	background-color: #0B7BE5;
+}
+.button.primary.linkedin:active {
+	background-color: #084C91;
+}
+
+/* YouTube red */
+.button.primary.youtube {
+	background-color: #FF0000;
+	box-shadow: none;
+	color: #ffffff !important;
+}
+.button.primary.youtube:hover {
+	background-color: #FF3333;
+}
+.button.primary.youtube:active {
+	background-color: #CC0000;
+}
