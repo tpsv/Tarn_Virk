@@ -4084,24 +4084,33 @@ input, select, textarea {
 	}
 }
 
-/* Hero: frosted scrim behind text for readability */
+/* Hero: frosted scrim behind text (keeps the intro line animation working) */
 #banner .inner {
-	isolation: isolate;
+	position: relative;
+}
+
+#banner .inner > * {
+	position: relative;
 }
 
 #banner .inner::before {
 	content: "";
 	position: absolute;
-	inset: -2.5em -1.5em;
-	z-index: -1;
-	background: radial-gradient(ellipse at center,
-		rgba(0, 0, 0, 0.60) 0%,
-		rgba(0, 0, 0, 0.45) 55%,
+	top: -2.5em;
+	bottom: -2.5em;
+	left: 0;
+	right: 0;
+	width: min(100%, 72em);
+	margin: 0 auto;
+	pointer-events: none;
+	background: radial-gradient(ellipse closest-side,
+		rgba(0, 0, 0, 0.55) 0%,
+		rgba(0, 0, 0, 0.40) 60%,
 		rgba(0, 0, 0, 0) 100%);
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
-	-webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%);
-	mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+	-webkit-mask-image: radial-gradient(ellipse closest-side, #000 55%, transparent 100%);
+	mask-image: radial-gradient(ellipse closest-side, #000 55%, transparent 100%);
 }
 
 /* Bolder text for readability */
