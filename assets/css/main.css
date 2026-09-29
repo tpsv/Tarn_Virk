@@ -4023,3 +4023,63 @@ input, select, textarea {
 .button.primary.youtube:active {
 	background-color: #CC0000;
 }
+
+/* Hero skill lines */
+#banner .skill-lines {
+	max-width: 62em;
+	margin: 0 auto 1.25em auto;
+}
+
+#banner .skill-lines p {
+	margin: 0 0 0.7em 0;
+	font-size: 0.95em;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	line-height: 1.6;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Category labels in an accent colour */
+#banner .skill-lines .label {
+	color: #f5c542;
+	margin-right: 0.4em;
+}
+
+/* AI line gets the most emphasis */
+#banner .skill-lines .ai-line {
+	font-size: 1.15em;
+	padding-bottom: 0.5em;
+	margin-bottom: 0.9em;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Hook sentence */
+#banner .hook {
+	max-width: 46em;
+	margin: 0 auto 1.75em auto;
+	font-size: 1.1em;
+	font-style: italic;
+	letter-spacing: 0.03em;
+	color: #e8e8e8;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Tablet and mobile: label on its own line, smaller text */
+@media screen and (max-width: 736px) {
+	#banner .skill-lines p {
+		font-size: 0.75em;
+		letter-spacing: 0.08em;
+	}
+	#banner .skill-lines .label {
+		display: block;
+		margin: 0 0 0.2em 0;
+	}
+	#banner .skill-lines .ai-line {
+		font-size: 0.85em;
+	}
+	#banner .hook {
+		font-size: 0.95em;
+	}
+}
