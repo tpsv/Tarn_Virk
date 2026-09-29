@@ -4083,3 +4083,33 @@ input, select, textarea {
 		font-size: 0.95em;
 	}
 }
+
+/* Hero: frosted scrim behind text for readability */
+#banner .inner {
+	isolation: isolate;
+}
+
+#banner .inner::before {
+	content: "";
+	position: absolute;
+	inset: -2.5em -1.5em;
+	z-index: -1;
+	background: radial-gradient(ellipse at center,
+		rgba(0, 0, 0, 0.60) 0%,
+		rgba(0, 0, 0, 0.45) 55%,
+		rgba(0, 0, 0, 0) 100%);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	-webkit-mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%);
+	mask-image: radial-gradient(ellipse at center, #000 55%, transparent 100%);
+}
+
+/* Bolder text for readability */
+#banner .skill-lines p {
+	font-weight: 800;
+}
+
+#banner .hook {
+	font-weight: 600;
+	color: #ffffff;
+}
